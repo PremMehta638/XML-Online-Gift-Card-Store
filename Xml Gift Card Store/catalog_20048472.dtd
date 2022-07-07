@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT store (StoreInfo,GiftCards)>
+<!ATTLIST store xmlns:xsi CDATA #FIXED 'http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+
+<!ELEMENT StoreInfo (StoreName,Logo,Slogan,Address,Number,Email,Website)>
+<!ATTLIST StoreInfo RegistrationNum CDATA #REQUIRED>
+<!ELEMENT StoreName (#PCDATA)>
+<!ELEMENT Logo (#PCDATA)>
+<!ELEMENT Slogan (#PCDATA)>
+<!ELEMENT Address (ZipCode,City,Street,Country)>
+<!ELEMENT ZipCode (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT Country (#PCDATA)>
+<!ELEMENT Number (PhoneNumber,TelephoneNumber)>
+<!ELEMENT PhoneNumber (#PCDATA)>
+<!ATTLIST PhoneNumber zip CDATA #REQUIRED>
+<!ELEMENT TelephoneNumber (#PCDATA)>
+<!ATTLIST TelephoneNumber zip CDATA #REQUIRED>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Website (#PCDATA)>
+
+<!ELEMENT GiftCards (GiftCard+)>
+<!ATTLIST GiftCards Quantity CDATA #REQUIRED>
+<!ELEMENT GiftCard (logo,Type, Pin?, Code?, Cost,Validity,Category,NumberofUsers,Discounts,Transferable,Description)>
+<!ATTLIST GiftCard cardID ID #REQUIRED>
+<!ELEMENT logo EMPTY>
+<!ATTLIST logo logoNum CDATA #REQUIRED>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT Pin (#PCDATA)>
+<!ELEMENT Code (#PCDATA)>
+<!ELEMENT Cost (#PCDATA)>
+<!ELEMENT Validity (#PCDATA)>
+<!ELEMENT Category (#PCDATA)>
+<!ELEMENT NumberofUsers (#PCDATA)>
+<!ELEMENT Discounts (#PCDATA)>
+<!ELEMENT Transferable (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>

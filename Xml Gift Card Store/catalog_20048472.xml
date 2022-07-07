@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="catalog_20048472.css" type="text/css"?>
+<!DOCTYPE store SYSTEM "catalog_20048472.dtd">
+<store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="catalog_20048472.xsd">
+    <StoreInfo RegistrationNum="02345789">
+        <StoreName>Meow Gift Store</StoreName>
+        <Logo> </Logo>
+        <Slogan>Gifts to express your feeling</Slogan>
+        <Address>
+            <ZipCode>5210</ZipCode>
+            <City>269 Regent St</City>
+            <Street>London W1B 2EX</Street>
+            <Country>United Kingdom</Country>
+        </Address>
+        <Number>
+            <PhoneNumber zip="+447">436400589</PhoneNumber>
+            <TelephoneNumber zip="+44">2074954843</TelephoneNumber>
+        </Number>
+        <Email>info@Meow.com</Email>
+        <Website>www.Meow.com</Website>    
+    </StoreInfo>
+    
+    <GiftCards Quantity="4">
+        <GiftCard cardID="GC1">
+            <logo logoNum="01"></logo>
+            <Type>Physical</Type>
+            <Pin>78046-34905</Pin>
+            <Cost>£40.00</Cost>
+            <Validity>2022-06-13</Validity>
+            <Category>online payments</Category>
+            <NumberofUsers>4</NumberofUsers>
+            <Discounts>2</Discounts>
+            <Transferable>Not_Transferable</Transferable>
+            <Description>
+                <![CDATA[
+                Its Small but I hope this makes the next few weeks just a little easier.
+                ]]>
+            </Description>
+        </GiftCard>
+
+        <GiftCard cardID="GC2">
+            <logo logoNum="02"></logo>
+            <Type>Digital</Type>
+            <Code>JN893-8JKIE</Code>
+            <Cost>£25.00</Cost>
+            <Validity>2022-06-13</Validity>
+            <Category>shopping mall</Category>
+            <NumberofUsers>5</NumberofUsers>
+            <Discounts>5</Discounts>
+            <Transferable>Not_Transferable</Transferable>
+            <Description>
+                <![CDATA[
+                Its Small but I hope this makes the next few weeks just a little easier.
+                ]]>
+            </Description>
+        </GiftCard>
+
+        <GiftCard cardID="GC3">
+            <logo logoNum="03"></logo>
+            <Type>Physical</Type>
+            <Pin>97543-77432</Pin>
+            <Cost>£20.00</Cost>
+            <Validity>2022-06-13</Validity>
+            <Category>restaurants</Category>
+            <NumberofUsers>3</NumberofUsers>
+            <Discounts>4</Discounts>
+            <Transferable>Not_Transferable</Transferable>
+            <Description>
+                <![CDATA[
+                Its Small but I hope this makes the next few weeks just a little easier.
+                ]]>
+            </Description>
+        </GiftCard>
+
+        <GiftCard cardID="GC4">
+            <logo logoNum="04"></logo>
+            <Type>Digital</Type>
+            <Code>U886R-MNUE5</Code>
+            <Cost>£30.00</Cost>
+            <Validity>2022-06-13</Validity>
+            <Category>gift stores</Category>
+            <NumberofUsers>2</NumberofUsers>
+            <Discounts>3</Discounts>
+            <Transferable>Transferable</Transferable>
+            <Description>
+                <![CDATA[
+                Its Small but I hope this makes the next few weeks just a little easier.
+                ]]>
+            </Description>
+        </GiftCard>
+    </GiftCards>
+</store>

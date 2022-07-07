@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+store{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #EDC2D8FF;
+    padding: 2em 0;
+}
+StoreName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FC766AFF;
+    font-family:'Baloo Thambi', cursive;
+    font-size: 50px;
+    animation: leftright 2s linear infinite;
+    animation-direction: alternate;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: #B0B8B4FF;
+    width: 500px;
+    height: 65px;
+    -webkit-border-radius:30px;
+    -ms-border-radius: 30px;
+    -o-border-radius:30px;
+    text-transform: uppercase;
+    margin-left: 350px;
+    margin-top: 30px;
+}
+@keyframes leftright{
+    from{padding-left: 40px;}
+    to{padding-right: 40px;}
+}
+Slogan {
+    margin-bottom: -50px;
+    display: flex;
+    color: #FC766AFF;
+    font-family:'Baloo Thambi', cursive;
+    font-size: 50px;
+}
+
+Slogan {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: -5em;
+    margin-top: 30px;
+    margin-left: 470px;
+    font-size: 20px;
+}
+
+StoreInfo{
+    display: grid;
+    margin-bottom: 5em;
+}
+StoreInfo{
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-style: double;
+    border-color:brown;
+    padding-bottom: 30px;
+    padding-top: 30px
+}
+
+Logo {
+    position: absolute;
+    background: url(cat.gif) no-repeat;
+    background-size: 200px;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    border-radius: 100px;
+    margin-top:-15px;
+}
+
+Address,Number,Email,Website{
+    text-align: right;
+    padding-right: 2em;
+    font-family: 'Times New Romans';
+    font-size:30;
+    color:#184A45FF;
+}
+
+GiftCards{
+    font-size: 25px;
+    margin-right: -5em;
+}
+GiftCard{
+    display: grid;
+    margin-bottom: 10px;
+    padding: 50px;
+}
+logo[logoNum="01"], logo[logoNum="02"], logo[logoNum="03"],logo[logoNum="04"]
+{
+    width: 1000px;
+    height: 500px;
+}
+logo[logoNum="01"]{
+    background: url(./40.png) no-repeat;
+    background-size: 450px;
+}
+logo[logoNum="02"]{
+    background: url(./25.png) no-repeat;
+    background-size: 450px;
+}
+logo[logoNum="03"]{
+    background: url(./20.png) no-repeat;
+    background-size: 450px;
+}
+logo[logoNum="04"]{
+    background: url(./30.png) no-repeat;
+    background-size: 450px;
+}
+
+logo,Type,Pin,Code,Cost,Validity,Category,NumberofUsers,Discounts,Usuability,Transferable,
+Descritption{
+    font-family: papyrus;
+    display: list-item;
+    list-style: none;
+    width: 25%;
+    text-align: left;
+    line-height: 30px;
+    position: relative;
+    color:  #184A45FF;
+    font-weight: 1000;      
+    padding-top: 7x;
+  }
+
+  Type,Pin,Code,Cost,Validity,Category,NumberofUsers,Discounts,Usuability,Transferable,
+Description {
+    margin-left: 700px;
+}
+  logo {
+      margin-bottom: -500px;
+      margin-left: 200px;
+  }
+
+Description{
+    font-size: 20px;
+    text-align: left;
+    position: relative;
+    margin-top: 50px;
+    text-align: justify;
+    color:  #184A45FF;
+    font-size: 30;
+    margin-top: 30px;
+    font-family:'Baloo Thambi', cursive;
+
+}
+
+Type::before{
+    content: "Type: ";
+}
+Pin::before {
+    content: "Pin: ";
+}
+Code::before {
+    content: "Code: ";
+}
+Cost::before{
+    content: "Cost: ";
+}
+Validity::before{
+    content: "Validity: ";
+}
+Category::before{
+    content: "Category: ";
+}
+NumberofUsers::before{
+    content: "NumberofUsers: ";
+}
+Discounts::before{
+    content: "Discounts: ";
+}
+Transferable::before{
+    content: "Transferable: ";
+}
+Discounts::after{
+    content: "%";
+}

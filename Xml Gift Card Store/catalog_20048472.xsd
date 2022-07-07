@@ -1,0 +1,153 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="store" type="storeType" />
+    <xs:complexType name="storeType">
+        <xs:sequence>
+            <xs:element name="StoreInfo" type="StoreInfoType" />
+            <xs:element name="GiftCards" type="GiftCardsType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StoreInfoType">
+        <xs:group ref="StoreInfoChild"></xs:group>
+        <xs:attribute type="xs:positiveInteger" name="RegistrationNum" />
+    </xs:complexType>
+
+    <xs:group name="StoreInfoChild">
+        <xs:sequence>
+            <xs:element name="StoreName" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Logo" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Slogan" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Address" type="AddressType" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Number" type="NumberType" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Email" type="EmailRestriction" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Website" type="websiteRestriction" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="ZipCode" type="xs:positiveInteger" minOccurs="1" maxOccurs="1" />
+            <xs:element name="City" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Street" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Country" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NumberType">
+        <xs:sequence>
+            <xs:element name="PhoneNumber" type="PhoneNumberType" minOccurs="1" maxOccurs="1" />
+            <xs:element name="TelephoneNumber" type="TelephoneNumberType" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PhoneNumberType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute type="xs:string" name="zip" use="required"> </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="TelephoneNumberType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute type="xs:string" name="zip" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="EmailRestriction">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Za-z]+@[A-Za-z]+.[A-Za-z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="websiteRestriction">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="www.[A-Za-z]+.[a-z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="GiftCardsType">
+        <xs:sequence>
+            <xs:element type="GiftCardType" name="GiftCard" maxOccurs="unbounded" minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute type="xs:positiveInteger" name="Quantity" />
+    </xs:complexType>
+
+    <xs:complexType name="GiftCardType">
+        <xs:group ref="GiftCardChild"></xs:group>
+        <xs:attribute type="xs:string" name="cardID" />
+    </xs:complexType>
+
+    <xs:group name="GiftCardChild">
+        <xs:sequence>
+            <xs:element name="logo" type="LogoType" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Type" type="Type" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Pin" type="PinRestriction" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Code" type="CodeRestriction" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Cost" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Validity" type="ValidityRestriction" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Category" type="xs:string" minOccurs="1" maxOccurs="1" />
+            <xs:element name="NumberofUsers" type="NumberofUsersRestriction" minOccurs="1" maxOccurs="1" />
+            <xs:element name="Discounts" type="DiscountRestriction" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Transferable" type="TransferableType" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="LogoType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:positiveInteger" name="logoNum" use="required" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:simpleType name="Type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Digital" />
+            <xs:enumeration value="Physical" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PinRestriction">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}-[0-9]{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="CodeRestriction">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z0-9]{5}-[A-Z0-9]{5}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ValidityRestriction">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="NumberofUsersRestriction">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DiscountRestriction">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="2"/>
+            <xs:maxInclusive value="6"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TransferableType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Transferable"/>
+            <xs:enumeration value="Not_Transferable"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
